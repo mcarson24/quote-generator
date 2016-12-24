@@ -7,14 +7,15 @@
         <div class="buttons">
             <button @click="getAQuote" class="fetch" v-bind:style="{ color: color }">{{ buttonText }}</button>
             <div>
-                <i class="fa fa-twitter-square twitter" aria-hidden="true"></i>
-                
+                <a :href="tweetLink">
+                    <i class="fa fa-twitter-square twitter" aria-hidden="true"></i>
+                </a>
             </div>
         </div>  
     </div>
 </template>
 
-<script>
+<script scoped>
     export default {
         data() {
             return {
@@ -63,6 +64,12 @@
                 return color.join('');
             }
         },
+        computed: {
+            tweetLink() {
+                let encodedQuote = `${this.quote} - ${this.author}` 
+                return `https://twitter.com/intent/tweet?text=${encodedQuote.replace(/\s/g, '%20')}&hashtags=quote`
+            }
+        },
         created() {
             this.getAQuote();
             this.color = this.randomColor();
@@ -108,6 +115,7 @@
         }
         border: none;
     }
+    
     i {
         &.twitter {
             float: left;
