@@ -67,6 +67,9 @@
         computed: {
             tweetLink() {
                 let encodedQuote = `${this.quote} - ${this.author}` 
+                if (encodedQuote.length >= 33) {
+                    encodedQuote = encodedQuote.substring(0, 130) + '...'
+                }
                 return `https://twitter.com/intent/tweet?text=${encodedQuote.replace(/\s/g, '%20')}&hashtags=quote`
             }
         },
