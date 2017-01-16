@@ -1,6 +1,8 @@
 # quote-generator
 
-> Quote Generator for FreeCodeCamp
+###### View the challenge [here](https://www.freecodecamp.com/challenges/build-a-random-quote-machine).
+---
+> Quote Generator for FreeCodeCamp using Vue.js.
 
 ## Build Setup
 
