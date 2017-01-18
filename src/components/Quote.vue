@@ -89,6 +89,7 @@
         padding: 35px;
         font-weight: bold;
         display: table;
+        box-shadow: 1px 1px 1px 0;
         p {
             color: white;
             font-size: 1.2em;
